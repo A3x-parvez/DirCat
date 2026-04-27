@@ -2,8 +2,6 @@
 
 <img src="assets/dircat_logo.png" alt="DirCat Logo" width="150" />
 
----
-
 # DirCat 🐱
 
 **Instant project scaffolding from JSON, tree text, or AI output.**
