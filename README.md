@@ -262,7 +262,7 @@ To add your own, drop a valid JSON file into `dircat/templates/<name>.json` and 
 ## Project Structure
 
 ```
-dircat/
+DirCat/
 ├── dircat/                  # Main package
 │   ├── __init__.py
 │   ├── cli.py               # CLI entry point (argparse)
@@ -295,8 +295,8 @@ Contributions are welcome! Here's how to get started:
 1. Fork the repository and create a feature branch
 2. Clone your fork and install in editable mode:
    ```bash
-   git clone https://github.com/your-username/dircat.git
-   cd dircat
+   git clone https://github.com/your-username/DirCat.git
+   cd DirCat
    pip install -e .
    ```
 3. Make your changes and add tests for new behavior

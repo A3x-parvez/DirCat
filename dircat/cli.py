@@ -7,7 +7,7 @@ from dircat.ui import show_home
 from rich.live import Live
 from dircat.ui import show_loader, show_success
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
 
 
