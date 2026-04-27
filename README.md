@@ -263,13 +263,27 @@ To add your own, drop a valid JSON file into `dircat/templates/<name>.json` and 
 
 ```
 dircat/
-├── cli.py        # Argument parsing and CLI entry point
-├── core.py       # Filesystem creation logic
-├── utils.py      # Input parsing: JSON, tree, AI output normalization
-├── ui.py         # Terminal UI components (rich)
-└── templates/
-    ├── basic.json
-    └── ml.json
+├── dircat/                  # Main package
+│   ├── __init__.py
+│   ├── cli.py               # CLI entry point (argparse)
+│   ├── core.py              # Filesystem creation logic
+│   ├── utils.py             # Input parsing (JSON, tree, AI)
+│   ├── ui.py                # Rich UI components
+│   └── templates/           # Built-in templates
+│       ├── basic.json
+│       ├── web.json
+│       └── ml.json
+│
+│
+├── assets/  
+│   ├── basic.json               
+│   └── dircat_logo.png   # Logo, images for README
+│
+├── README.md
+├── LICENSE
+├── .gitignore        # Modern packaging (recommended)
+└── setup.py (optional)      # If not using pyproject fully
+
 ```
 
 ---
