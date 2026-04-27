@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/dircat_logo.png" alt="DirCat Logo" width="120" />
+<img src="assets/dircat_logo.png" alt="DirCat Logo" width="150" />
+
+---
 
 # DirCat 🐱
 
@@ -167,7 +169,9 @@ dircat structure.json --quiet
 
 ## Input Formats
 
-DirCat accepts three input formats, auto-detected at runtime.
+DirCat accepts multiple input formats and auto-detects them at runtime.
+Input can be a `.json` file, a `.txt` file, or an inline string — no strict file type required.
+
 
 ### JSON object
 
@@ -178,6 +182,11 @@ DirCat accepts three input formats, auto-detected at runtime.
   "files": ["README.md", "src/__init__.py", "src/main.py"]
 }
 ```
+
+```bash
+dircat structure.json   # or structure.txt — both work
+```
+
 
 ### JSON with file contents
 
@@ -203,9 +212,16 @@ myapp/
 └── README.md
 ```
 
-DirCat detects `├──` / `└──` characters and parses the tree into the equivalent JSON config automatically.
+```bash
+dircat tree.txt
+```
 
-> **AI-friendly:** You can paste raw GPT or Claude output — DirCat will strip markdown fences and extract valid JSON or tree structure automatically.
+DirCat detects `├──` / `└──` characters and converts the tree into a valid structure automatically.
+
+
+### AI / GPT output
+
+Paste output from GPT or Claude directly — DirCat can handle common markdown-wrapped JSON or tree structures and extract usable input automatically.
 
 ---
 
