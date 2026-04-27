@@ -1,0 +1,16 @@
+{
+  "root": "project",
+  "folders": [
+    "src",
+    "tests",
+    "docs",
+    "scripts"
+  ],
+  "files": {
+    "README.md": "# Project\n",
+    ".gitignore": "__pycache__/\n.env\n",
+    "requirements.txt": "",
+    "src/main.py": "def main():\n    print('Hello World')\n\nif __name__ == '__main__':\n    main()\n",
+    "tests/test_main.py": "def test_example():\n    assert True\n"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "root": "ml_project",
+  "folders": [
+    "data/raw",
+    "data/processed",
+    "notebooks",
+    "models",
+    "src",
+    "src/utils",
+    "experiments",
+    "logs"
+  ],
+  "files": {
+    "README.md": "# ML Project\n",
+    "requirements.txt": "numpy\npandas\nscikit-learn\n",
+    "src/train.py": "def train():\n    pass\n",
+    "src/utils/data_loader.py": "",
+    "notebooks/analysis.ipynb": "",
+    "models/.keep": "",
+    "logs/.keep": ""
+  }
+}

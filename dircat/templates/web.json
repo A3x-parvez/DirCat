@@ -1,0 +1,17 @@
+{
+  "root": "web_app",
+  "folders": [
+    "backend",
+    "frontend",
+    "frontend/src",
+    "backend/api",
+    "backend/models",
+    "backend/routes"
+  ],
+  "files": {
+    "README.md": "# Web App\n",
+    "backend/app.py": "from flask import Flask\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return 'Hello'\n",
+    "frontend/src/main.js": "console.log('Hello Frontend');",
+    ".gitignore": "node_modules/\n__pycache__/\n.env\n"
+  }
+}
