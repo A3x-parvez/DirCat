@@ -155,7 +155,7 @@ def show_home():
     console.print("[bold white]> Tip:[/bold white] [dim]paste GPT output directly — dircat understands it[/dim]")
     console.print("[dim]> built for fast vibe coding 🚀[/dim]")
 
-    console.print("\n")
+    # console.print("\n")
     
 # -----------------------------
 # 🌀 Loader Animation

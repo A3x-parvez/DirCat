@@ -15,6 +15,10 @@
 
 [📖 Docs](#usage) · [🚀 Quick Start](#quick-start) · [🐛 Report Bug](https://github.com/A3x-parvez/dircat/issues) · [✨ Request Feature](https://github.com/A3x-parvez/dircat/issues)
 
+<br/>
+
+![DirCat UI](assets/ui_demo.png)
+
 </div>
 
 ---
@@ -25,7 +29,7 @@ DirCat converts structured descriptions — JSON objects, ASCII tree diagrams, o
 
 ## Table of Contents
 
-- [Features](#features)
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
@@ -38,40 +42,61 @@ DirCat converts structured descriptions — JSON objects, ASCII tree diagrams, o
 
 ---
 
-## Features
+## Requirements
 
-- **Multiple input formats** — JSON files, inline JSON strings, ASCII tree diagrams, and messy AI output
-- **Safe by default** — `--dry-run` previews all actions before touching the filesystem; `--force` to overwrite
-- **Built-in templates** — scaffold common project layouts instantly with `--template <n>`
-- **AI-friendly** — paste GPT/Claude output directly; DirCat strips markdown fences and extracts valid structure
-- **Rich terminal UI** — clear output with a summary of folders and files created
+- Python 3.8 or higher
+- pip
+- Git
 
 ---
 
 ## Installation
 
-Install from source (requires Python 3.8+):
+### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/A3x-parvez/dircat.git
-cd dircat
-pip install -e .
+git clone https://github.com/A3x-parvez/DirCat.git
+cd DirCat
 ```
 
-> **Runtime dependency:** [`rich`](https://github.com/Textualize/rich) is installed automatically.
+### Step 2 — Install the package
+
+```bash
+pip install .
+```
+
+That's it. The `dircat` command is now available globally in your terminal.
+
+> **Tip:** Use `pip install -e .` instead if you want to edit the source and see changes reflected immediately without reinstalling.
+
+### Verify the install
+
+```bash
+dircat
+``` 
+```bash
+dircat --help
+```
+
+You should see the DirCat home UI with the list of available commands.
 
 ---
 
 ## Quick Start
 
+Once installed, run `dircat` from anywhere:
+
 ```bash
 # Scaffold from a JSON file
 dircat structure.json
 
+# Scaffold from a TXT file
+dircat structure.txt
+
 # Use a built-in template
 dircat --template basic
 
-# Inline JSON
+# Inline JSON — no file needed
 dircat '{"root":"app","files":["main.py","requirements.txt"]}'
 
 # Preview without creating anything
@@ -84,17 +109,23 @@ dircat --dry-run structure.json
 
 ### From a file
 
+Create a `structure.json` (or `.txt`) and pass it to DirCat:
+
 ```bash
 dircat structure.json
 ```
 
 ### From inline JSON
 
+Pass a JSON string directly as an argument — no file required:
+
 ```bash
 dircat '{"root":"myapp","folders":["src","tests"],"files":["README.md","src/main.py"]}'
 ```
 
 ### Using a template
+
+Use one of the built-in templates to scaffold a standard layout:
 
 ```bash
 dircat --template basic
@@ -103,17 +134,30 @@ dircat --template ml
 
 ### Dry run (preview only)
 
+See exactly what will be created before any files are written:
+
 ```bash
-dircat --dry-run structure.json
+dircat --dry-run structure.json #json file
+dircat --dry-run structure.txt #txt file
 ```
 
 ### Create in the current directory
+
+By default DirCat creates the project inside a named root folder. Use `--here` to create directly in the current directory:
 
 ```bash
 dircat structure.json --here
 ```
 
+### Overwrite existing files
+
+```bash
+dircat structure.json --force
+```
+
 ### Quiet mode
+
+Suppress the summary UI and only show errors:
 
 ```bash
 dircat structure.json --quiet
@@ -161,17 +205,26 @@ myapp/
 
 DirCat detects `├──` / `└──` characters and parses the tree into the equivalent JSON config automatically.
 
+> **AI-friendly:** You can paste raw GPT or Claude output — DirCat will strip markdown fences and extract valid JSON or tree structure automatically.
+
 ---
 
 ## Templates
 
-Built-in templates live in [`dircat/templates/`](dircat/templates). List available templates:
+Built-in templates live in [`dircat/templates/`](dircat/templates). List all available templates:
 
 ```bash
 python -m dircat.cli template --list
 ```
 
-To add your own template, drop a valid JSON file into `dircat/templates/<n>.json`.
+Use a template:
+
+```bash
+dircat --template basic
+dircat --template ml
+```
+
+To add your own, drop a valid JSON file into `dircat/templates/<name>.json` and it will be auto-discovered.
 
 ---
 
@@ -212,15 +265,14 @@ dircat/
 Contributions are welcome! Here's how to get started:
 
 1. Fork the repository and create a feature branch
-2. Install in editable mode: `pip install -e .`
+2. Clone your fork and install in editable mode:
+   ```bash
+   git clone https://github.com/your-username/dircat.git
+   cd dircat
+   pip install -e .
+   ```
 3. Make your changes and add tests for new behavior
 4. Open a pull request with a clear description
-
-```bash
-# Verify your setup
-pip install -e .
-python -m dircat.cli --help
-```
 
 Please keep `VERSION` in `dircat/cli.py` in sync with any release tags.
 
@@ -238,6 +290,6 @@ Made with ❤️ by **A3x-parvez**
 
 [![GitHub](https://img.shields.io/badge/GitHub-A3x--parvez-181717?logo=github&logoColor=white)](https://github.com/A3x-parvez)
 [![Portfolio](https://img.shields.io/badge/Portfolio-rijwanool--karim-FF5722?logo=vercel&logoColor=white)](https://rijwanool-karim.vercel.app)
-[![Portfolio](https://img.shields.io/badge/LinkedIn-rijwanool--karim-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/rijwanool-karim)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-rijwanool--karim-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/rijwanool-karim)
 
 </div>
